@@ -71,14 +71,14 @@ class _MyHomePageState extends State<_MyHomePage> {
         ),
         tooltipBehavior: _tooltip,
         series: <ChartSeries<_ChartData, double>>[
-          AreaSeries<_ChartData, double>(
+          SplineAreaSeries<_ChartData, double>(
             dataSource: data,
             xValueMapper: (_ChartData data, _) => data.x,
             yValueMapper: (_ChartData data, _) => data.y,
             name: 'Gold',
             color: Colors.blue.withOpacity(0.7),
           ),
-          AreaSeries<_ChartData, double>(
+          SplineAreaSeries<_ChartData, double>(
             dataSource: data2,
             xValueMapper: (_ChartData data, _) => data.x,
             yValueMapper: (_ChartData data, _) => data.y,
