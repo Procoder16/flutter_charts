@@ -4,7 +4,7 @@ import 'dart:async';
 import 'dart:math' as math;
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp(),);
 }
 
 class MyApp extends StatelessWidget {
@@ -100,18 +100,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int time = 10;
   void updateDataSource(Timer timer) {
-    chartData.add(LiveData(time++, (math.Random().nextInt(60) + 30)));
+    chartData.add(LiveData(time, (math.Random().nextInt(60) + 30)));
     chartData.removeAt(0);
     _chartSeriesController.updateDataSource(
       addedDataIndex: chartData.length - 1,
       removedDataIndex: 0,
     );
-    chartData2.add(LiveData(time++, (math.Random().nextInt(30) + 10)));
+    chartData2.add(LiveData(time, (math.Random().nextInt(30) + 10)));
     chartData2.removeAt(0);
     _chartSeriesController2.updateDataSource(
       addedDataIndex: chartData2.length - 1,
       removedDataIndex: 0,
     );
+    time++;
   }
 
   List<LiveData> getChartData() {
